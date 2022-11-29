@@ -41,11 +41,48 @@ The caret, ^, identifies the beginning of our string where we have the algorithm
 
 For the HTML tag regex, we set up the pattern string search as /^<([a-z]+)([^<]+)*(?:>(.*)<\/\1>|\s+\/>)$/ which means we have the open and closing tags at the beginning and end of the string.
 ### Quantifiers
+We use quantifiers in regex to determine where our preceding token string must be matched a pre-set number of times or more. A quantifier has the capacity of being greedy or lazy, which is further notated below:
 
++
+
+this quantifier maintains that the search must match one or more of the characters set in the algorithm
+characters placed to the left of the + are expected to match at least once
+example: A+; the quantifier + is applied for a search for A
+example: apples+ the quantifier + is ONLY applied to the s in apples rather than the entire word
+*
+
+this quantifier maintains that the search must match 0 or more times
+?
+
+this quantifier maintains that the search must match 0 or 1 times; it is considered optional
+when implemented, it makes the preceding quantifier lazy, permitting it to match as few times as possible; whereas by default with our algorithm, quantifiers tend to gravitate towards matching as many characters as possible and are considered greedy as a result
+{7,9}
+
+the algorithm is set to force characters between seven and nine characters long
+abc|cba
+
+results in a match of abc OR cba only
 ### OR Operator
-
+|
+This operator acts like a Boolean OR. It causes a match of the expression before or after the | and can be utilized inside a group or on a whole expression. In terms of order, it causes the search-string to look for a match of either what precedes or follows after the |. In the example: <abc>|<cba> it is looking for either <abc> or <cba>.
 ### Character Classes
+In order to search for match characters between a specific range of character, we create what is called "character classes".
 
+Some example types:
+
+\w This will match any word character (alphanumeric and underscored) such as [a-z0-9_], but will only match lowercase character without accent marks.
+
+\W This matches any character that is not a word character (alphanumeric and underscored) such as [A-Za-z0-9_]
+
+\d sets the search to match any digitized character such as 0-9
+
+\D` sets the search for non-digitized characters
+
+\p sets the match for a character in the specific unicode category
+
+[A-Z] utilizing the hyphen between the two characters creates a range for the search criteria
+
+' is a wildcard and will accept any input
 ### Flags
 
 ### Grouping and Capturing
