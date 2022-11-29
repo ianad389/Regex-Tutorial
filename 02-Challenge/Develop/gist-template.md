@@ -18,7 +18,11 @@ Briefly summarize the regex you will be describing and what you will explain. In
 - [Character Escapes](#character-escapes)
 
 ## Regex Components
+A regular expression (also called regex or regexp) is a way to describe a pattern. It is used to locate or validate specific strings or patterns of text in a sentence, document, or any other character input.
 
+Regular expressions use both basic and special characters. Basic characters are standard letters, numbers, and general keyboard characters, while all other characters are considered special.
+
+This article will introduce special characters and discuss using them in regex and extended regular expressions (ERE) with plenty of examples.
 ### Anchors
 
 ### Quantifiers
