@@ -1,10 +1,20 @@
 # Regex Tutorial HTML
 
-
+For this tutorial is specific to utilizing Regular Expressions (Regex) for matching an HTML tag. Implementation of a Regex in this way is a narrow pattern search. The following tutorial will help demonstrate the usage of an HTML Tag Regex search.
 
 ## Summary
 
-Briefly summarize the regex you will be describing and what you will explain. Include a code snippet of the regex. Replace this text with your summary.
+When a Regex or regular expression is used, it is done by identifying a pattern used in string-search based algorithms through a function known as FIND or FIND AND REPLACE.
+
+The example of code for an HTML Tag search is as follows:
+
+/^<([a-z]+)([^<]+)*(?:>(.*)<\/\1>|\s+\/>)$/
+
+You will need to have a working knowledge of what an HTML tag utilizes to understand this tutorial. Therefore, as a refresher, please note that an HTML tag contains < and > as an opening and closing "tag". You may have seen in previously viewed source code for a webpage the following examples: <HTML>, <main>, <div>, and so forth.
+
+For every open tag, a closing tag must follow in order to contain the code within or else it will not be properly run. HTML tags are not always quite as simple as the prior example and can include various specific parts through which, when run, can deploy unique tasks. Consider the following:
+
+<a href="http://www.googly.com" title="This is Googly" target="_blank">
 
 ## Table of Contents
 
@@ -23,7 +33,13 @@ Briefly summarize the regex you will be describing and what you will explain. In
 ## Regex Components
 
 ### Anchors
+Through the usage of anchors we define where the search parameters begin and end. Anything after ^ (caret) and before $ (dollar) are part of the search definition. The character immediately following a caret is identified by it's position within a search, as is the character preceding the dollar.
 
+^abc123$
+
+The caret, ^, identifies the beginning of our string where we have the algorithm set to match the position rather than the character. As with the dollar, $, it identifies the end of our search string within the algorithm.
+
+For the HTML tag regex, we set up the pattern string search as /^<([a-z]+)([^<]+)*(?:>(.*)<\/\1>|\s+\/>)$/ which means we have the open and closing tags at the beginning and end of the string.
 ### Quantifiers
 
 ### OR Operator
